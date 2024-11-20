@@ -19,7 +19,7 @@ st.write("The name on your Smoothie will be ", name_on_order)
 #Snowflake データベースからデータを取得し、それをウェブアプリケーション上に表示する
 cnx = st.connection("snowflake")
 session = cnx.session()
-my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'), col('SERCH_ON')) #FRUIT_NAME列だけを選択
+my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'), col('SEARCH_ON')) #FRUIT_NAME列だけを選択
 st.dataframe(data=my_dataframe, use_container_width=True) #←コメントアウトすることでデータフレームの表示をなくした
 #st.stop()
 
