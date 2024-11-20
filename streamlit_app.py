@@ -21,7 +21,7 @@ cnx = st.connection("snowflake")
 session = cnx.session()
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'), col('SEARCH_ON')) #FRUIT_NAME列だけを選択
 st.dataframe(data=my_dataframe, use_container_width=True) #←コメントアウトすることでデータフレームの表示をなくした
-#st.stop()
+st.stop()
 
 
 #ユーザーが複数の果物（スムージーの材料）を選択できるように、multiselect ウィジェットを追加
