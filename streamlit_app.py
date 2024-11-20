@@ -50,3 +50,8 @@ if ingredients_list:
         session.sql(my_insert_stmt).collect() #、選択された果物の名前が orders テーブルに挿入される
         
         st.success(f'Your Smoothie is ordered, {name_on_order}!', icon="✅")   
+
+# New section to display smoothiefroot nutrition information
+import requests
+smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+st.text(smoothiefroot_response)
